@@ -1,0 +1,13 @@
+import java.rmi.*;
+import java.rmi.server.*;
+
+// Implémentation de la fabrique de compteurs accessibles à distance
+public class CounterFactoryImpl extends UnicastRemoteObject implements CounterFactory {
+    // Constructeur
+    public CounterFactoryImpl() throws RemoteException {}
+
+    // Méthode pour créer un nouveau compteur
+    public Counter createCounter(int initialValue) throws RemoteException {
+        return new Counter(initialValue);
+    }
+}
